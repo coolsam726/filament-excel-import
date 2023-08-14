@@ -1,10 +1,9 @@
 <?php
 
-namespace Coolsam\FilamentExcel\Actions;
+namespace Coolsam\FilamentExcel\Actions\Tables;
 
-use Closure;
 use Coolsam\FilamentExcel\Concerns\HasImportAction;
-use Filament\Actions\Action;
+use Filament\Tables\Actions\Action;
 
 class ImportAction extends Action
 {
