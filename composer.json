@@ -1,15 +1,15 @@
 {
-    "name": "coolsam/excel",
+    "name": "coolsam/excel-import",
     "description": "Easy imports and exports in FilamentPHP using laravel-excel",
     "keywords": [
         "coolsam",
         "laravel",
         "excel"
     ],
-    "homepage": "https://github.com/coolsam/excel",
+    "homepage": "https://github.com/coolsam726/filament-excel-import",
     "support": {
-        "issues": "https://github.com/coolsam/excel/issues",
-        "source": "https://github.com/coolsam/excel"
+        "issues": "https://github.com/coolsam726/filament-excel-import/issues",
+        "source": "https://github.com/coolsam726/filament-excel-import"
     },
     "license": "MIT",
     "authors": [
