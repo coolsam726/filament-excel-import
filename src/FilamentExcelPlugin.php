@@ -1,15 +1,15 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace Coolsam\FilamentExcel;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 
-class SkeletonPlugin implements Plugin
+class FilamentExcelPlugin implements Plugin
 {
     public function getId(): string
     {
-        return 'skeleton';
+        return 'excel';
     }
 
     public function register(Panel $panel): void

@@ -1,29 +1,27 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "coolsam/excel",
+    "description": "Easy imports and exports in FilamentPHP using laravel-excel",
     "keywords": [
-        ":vendor_name",
+        "coolsam",
         "laravel",
-        ":package_slug"
+        "excel"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/coolsam/excel",
     "support": {
-        "issues": "https://github.com/:vendor_slug/:package_slug/issues",
-        "source": "https://github.com/:vendor_slug/:package_slug"
+        "issues": "https://github.com/coolsam/excel/issues",
+        "source": "https://github.com/coolsam/excel"
     },
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Sam Maosa",
+            "email": "smaosa@savannabits.com",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.1",
         "filament/filament": "^3.0",
-        "filament/forms": "^3.0",
-        "filament/tables": "^3.0",
         "spatie/laravel-package-tools": "^1.15.0",
         "illuminate/contracts": "^10.0"
     },
@@ -42,13 +40,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "Coolsam\\FilamentExcel\\": "src/",
+            "Coolsam\\FilamentExcel\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/"
+            "Coolsam\\FilamentExcel\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -68,10 +66,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Coolsam\\FilamentExcel\\FilamentExcelServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "FilamentExcel": "Coolsam\\FilamentExcel\\Facades\\FilamentExcel"
             }
         }
     },

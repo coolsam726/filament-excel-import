@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace Coolsam\FilamentExcel;
 
 use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Assets\Asset;
@@ -8,20 +8,20 @@ use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
-use Filament\Support\Icons\Icon;
+use Filament\Support\Icons\IconManager;
 use Illuminate\Filesystem\Filesystem;
-use Livewire\Testing\TestableLivewire;
+use Livewire\Features\SupportTesting\Testable;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
-use VendorName\Skeleton\Testing\TestsSkeleton;
+use Coolsam\FilamentExcel\Commands\FilamentExcelCommand;
+use Coolsam\FilamentExcel\Testing\TestsFilamentExcel;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class FilamentExcelServiceProvider extends PackageServiceProvider
 {
-    public static string $name = 'skeleton';
+    public static string $name = 'coolsam-excel';
 
-    public static string $viewNamespace = 'skeleton';
+    public static string $viewNamespace = 'coolsam-excel';
 
     public function configurePackage(Package $package): void
     {
@@ -37,7 +37,7 @@ class SkeletonServiceProvider extends PackageServiceProvider
                     ->publishConfigFile()
                     ->publishMigrations()
                     ->askToRunMigrations()
-                    ->askToStarRepoOnGitHub(':vendor_slug/:package_slug');
+                    ->askToStarRepoOnGitHub('coolsam/excel');
             });
 
         $configFileName = $package->shortName();
@@ -83,18 +83,18 @@ class SkeletonServiceProvider extends PackageServiceProvider
         if (app()->runningInConsole()) {
             foreach (app(Filesystem::class)->files(__DIR__ . '/../stubs/') as $file) {
                 $this->publishes([
-                    $file->getRealPath() => base_path("stubs/skeleton/{$file->getFilename()}"),
-                ], 'skeleton-stubs');
+                    $file->getRealPath() => base_path("stubs/excel/{$file->getFilename()}"),
+                ], 'excel-stubs');
             }
         }
 
         // Testing
-        TestableLivewire::mixin(new TestsSkeleton());
+        Testable::mixin(new TestsFilamentExcel());
     }
 
     protected function getAssetPackageName(): ?string
     {
-        return ':vendor_slug/:package_slug';
+        return 'coolsam/excel';
     }
 
     /**
@@ -103,9 +103,9 @@ class SkeletonServiceProvider extends PackageServiceProvider
     protected function getAssets(): array
     {
         return [
-            // AlpineComponent::make('skeleton', __DIR__ . '/../resources/dist/components/skeleton.js'),
-            Css::make('skeleton-styles', __DIR__ . '/../resources/dist/skeleton.css'),
-            Js::make('skeleton-scripts', __DIR__ . '/../resources/dist/skeleton.js'),
+            // AlpineComponent::make('excel', __DIR__ . '/../resources/dist/components/excel.js'),
+            Css::make('excel-styles', __DIR__ . '/../resources/dist/excel.css'),
+            Js::make('excel-scripts', __DIR__ . '/../resources/dist/excel.js'),
         ];
     }
 
@@ -115,12 +115,12 @@ class SkeletonServiceProvider extends PackageServiceProvider
     protected function getCommands(): array
     {
         return [
-            SkeletonCommand::class,
+            FilamentExcelCommand::class,
         ];
     }
 
     /**
-     * @return array<string, Icon>
+     * @return array<string, IconManager>
      */
     protected function getIcons(): array
     {
@@ -149,7 +149,7 @@ class SkeletonServiceProvider extends PackageServiceProvider
     protected function getMigrations(): array
     {
         return [
-            'create_skeleton_table',
+            'create_excel_table',
         ];
     }
 }

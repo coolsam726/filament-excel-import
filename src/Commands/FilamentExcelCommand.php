@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Coolsam\FilamentExcel\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class FilamentExcelCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'excel';
 
     public $description = 'My command';
 
