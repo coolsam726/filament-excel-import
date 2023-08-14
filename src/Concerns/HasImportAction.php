@@ -3,7 +3,6 @@
 namespace Coolsam\FilamentExcel\Concerns;
 
 use Coolsam\FilamentExcel\Actions\ImportField;
-use Coolsam\FilamentExcel\FilamentImport;
 use Filament\Forms\ComponentContainer;
 use Filament\Forms\Components\Field;
 use Filament\Forms\Components\Fieldset;
