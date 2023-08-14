@@ -4,6 +4,7 @@ namespace Coolsam\FilamentExcel\Concerns;
 
 use Closure;
 use Coolsam\FilamentExcel\Actions\ImportField;
+use Coolsam\FilamentExcel\FilamentImport;
 use Filament\Actions\Concerns\CanCustomizeProcess;
 use Filament\Forms\ComponentContainer;
 use Filament\Forms\Components\Field;
