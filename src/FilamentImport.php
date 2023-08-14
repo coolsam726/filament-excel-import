@@ -28,7 +28,7 @@ class FilamentImport
 
     protected array $formSchemas;
 
-    protected string|Model $model;
+    protected string | Model $model;
 
     protected string $disk = 'local';
 
@@ -80,9 +80,11 @@ class FilamentImport
 
         return $this;
     }
+
     public function formSchemas($fields): static
     {
         $this->formSchemas = $fields;
+
         return $this;
     }
 
@@ -137,7 +139,7 @@ class FilamentImport
         return $data;
     }
 
-    public function handleRecordCreation(Closure|null $closure): static
+    public function handleRecordCreation(?Closure $closure): static
     {
         $this->handleRecordCreation = $closure;
 
