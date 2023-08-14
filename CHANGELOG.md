@@ -2,6 +2,14 @@
 
 All notable changes to `excel` will be documented in this file.
 
+## v1.0.0-beta.2 - 2023-08-14
+
+### What's Changed
+
+- Typo fixed: Removed wrongly imported Import Action from the root by @coolsam726 in https://github.com/coolsam726/filament-excel-import/pull/5
+
+**Full Changelog**: https://github.com/coolsam726/filament-excel-import/compare/v1.0.0-beta.1...v1.0.0-beta.2
+
 ## 1.0.0 - 202X-XX-XX
 
 - initial release
