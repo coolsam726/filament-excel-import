@@ -4,9 +4,9 @@ namespace Coolsam\FilamentExcel\Concerns;
 
 trait HasActionUniqueField
 {
-    protected bool|string $uniqueField = false;
+    protected bool | string $uniqueField = false;
 
-    public function uniqueField(bool|string $uniqueField): static
+    public function uniqueField(bool | string $uniqueField): static
     {
         $this->uniqueField = $uniqueField;
 
