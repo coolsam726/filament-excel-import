@@ -49,6 +49,7 @@ trait HasImportAction
         $this->setInitialForm();
 
         $this->button();
+        $this->icon('heroicon-o-arrow-up-tray');
 
         $this->groupedIcon('heroicon-s-plus');
 

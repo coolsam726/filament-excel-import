@@ -185,23 +185,21 @@ class FilamentImport
 
                 $prepareInsert = $this->doMutateBeforeCreate($prepareInsert);
 
-                if ($this->uniqueField !== false) {
-                    if (is_null($prepareInsert[$this->uniqueField] ?? null)) {
-                        DB::rollBack();
-                        $importSuccess = false;
+                if (!$this->handleRecordCreation) {
+                    if ($this->uniqueField !== false) {
+                        if (is_null($prepareInsert[$this->uniqueField] ?? null)) {
+                            DB::rollBack();
+                            $importSuccess = false;
 
-                        break;
+                            break;
+                        }
+
+                        $exists = (new $this->model)->where($this->uniqueField, $prepareInsert[$this->uniqueField] ?? null)->first();
+                        if ($exists instanceof $this->model) {
+                            $skipped++;
+                            continue;
+                        }
                     }
-
-                    $exists = (new $this->model)->where($this->uniqueField, $prepareInsert[$this->uniqueField] ?? null)->first();
-                    if ($exists instanceof $this->model) {
-                        $skipped++;
-
-                        continue;
-                    }
-                }
-
-                if (! $this->handleRecordCreation) {
                     if (! $this->shouldMassCreate) {
                         $model = (new $this->model)->fill($prepareInsert);
                         $model = tap($model, function ($instance) {
