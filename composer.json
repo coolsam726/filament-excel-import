@@ -6,10 +6,10 @@
         "laravel",
         "excel"
     ],
-    "homepage": "https://github.com/coolsam/excel",
+    "homepage": "https://github.com/coolsam726/filament-excel-import",
     "support": {
-        "issues": "https://github.com/coolsam/excel/issues",
-        "source": "https://github.com/coolsam/excel"
+        "issues": "https://github.com/coolsam726/filament-excel-import/issues",
+        "source": "https://github.com/coolsam726/filament-excel-import"
     },
     "license": "MIT",
     "authors": [
