@@ -4,11 +4,11 @@ namespace Coolsam\FilamentExcel\Concerns;
 
 trait HasFieldValidation
 {
-    protected array|string $rules = [];
+    protected array | string $rules = [];
 
     protected $customMessages = [];
 
-    public function rules(array|string $rules = [], $customMessages = []): static
+    public function rules(array | string $rules = [], $customMessages = []): static
     {
         $this->rules = $rules;
         $this->customMessages = $customMessages;
