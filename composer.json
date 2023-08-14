@@ -1,5 +1,5 @@
 {
-    "name": "coolsam/excel",
+    "name": "coolsam/excel-import",
     "description": "Easy imports and exports in FilamentPHP using laravel-excel",
     "keywords": [
         "coolsam",

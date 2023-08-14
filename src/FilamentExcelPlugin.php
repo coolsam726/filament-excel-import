@@ -9,7 +9,7 @@ class FilamentExcelPlugin implements Plugin
 {
     public function getId(): string
     {
-        return 'excel';
+        return 'excel-import';
     }
 
     public function register(Panel $panel): void
