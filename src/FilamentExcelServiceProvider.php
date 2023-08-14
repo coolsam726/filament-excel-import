@@ -2,6 +2,8 @@
 
 namespace Coolsam\FilamentExcel;
 
+use Coolsam\FilamentExcel\Commands\FilamentExcelCommand;
+use Coolsam\FilamentExcel\Testing\TestsFilamentExcel;
 use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Assets\Asset;
 use Filament\Support\Assets\Css;
@@ -14,8 +16,6 @@ use Livewire\Features\SupportTesting\Testable;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Coolsam\FilamentExcel\Commands\FilamentExcelCommand;
-use Coolsam\FilamentExcel\Testing\TestsFilamentExcel;
 
 class FilamentExcelServiceProvider extends PackageServiceProvider
 {
