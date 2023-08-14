@@ -28,7 +28,7 @@ class FilamentImport
 
     protected array $formSchemas;
 
-    protected string|Model $model;
+    protected string | Model $model;
 
     protected string $disk = 'local';
 
@@ -80,9 +80,11 @@ class FilamentImport
 
         return $this;
     }
+
     public function formSchemas($fields): static
     {
         $this->formSchemas = $fields;
+
         return $this;
     }
 
@@ -137,7 +139,7 @@ class FilamentImport
         return $data;
     }
 
-    public function handleRecordCreation(Closure|null $closure): static
+    public function handleRecordCreation(?Closure $closure): static
     {
         $this->handleRecordCreation = $closure;
 
@@ -185,7 +187,7 @@ class FilamentImport
 
                 $prepareInsert = $this->doMutateBeforeCreate($prepareInsert);
 
-                if (!$this->handleRecordCreation) {
+                if (! $this->handleRecordCreation) {
                     if ($this->uniqueField !== false) {
                         if (is_null($prepareInsert[$this->uniqueField] ?? null)) {
                             DB::rollBack();
@@ -197,6 +199,7 @@ class FilamentImport
                         $exists = (new $this->model)->where($this->uniqueField, $prepareInsert[$this->uniqueField] ?? null)->first();
                         if ($exists instanceof $this->model) {
                             $skipped++;
+
                             continue;
                         }
                     }
