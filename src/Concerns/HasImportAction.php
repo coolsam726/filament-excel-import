@@ -2,8 +2,10 @@
 
 namespace Coolsam\FilamentExcel\Concerns;
 
+use Closure;
 use Coolsam\FilamentExcel\Actions\ImportField;
 use Coolsam\FilamentExcel\FilamentImport;
+use Filament\Actions\Concerns\CanCustomizeProcess;
 use Filament\Forms\ComponentContainer;
 use Filament\Forms\Components\Field;
 use Filament\Forms\Components\Fieldset;
@@ -13,11 +15,8 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Get;
 use Filament\Forms\Set;
-use Illuminate\Support\Arr;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Maatwebsite\Excel\Concerns\Importable;
-use Filament\Actions\Concerns\CanCustomizeProcess;
-use \Closure;
 
 trait HasImportAction
 {
@@ -28,7 +27,9 @@ trait HasImportAction
     use CanCustomizeProcess;
 
     protected array $fields = [];
+
     protected bool $shouldMassCreate = false;
+
     protected bool $shouldHandleBlankRows = false;
 
     protected array $cachedHeadingOptions = [];
@@ -75,12 +76,13 @@ trait HasImportAction
             });
         });
     }
+
     public function setInitialForm(): void
     {
         $this->form([
             FileUpload::make('file')
                 ->label('')
-                ->required(!app()->environment('testing'))
+                ->required(! app()->environment('testing'))
                 ->acceptedFileTypes(config('coolsam-excel.accepted_mimes'))
                 ->imagePreviewHeight('250')
                 ->live()
@@ -119,7 +121,7 @@ trait HasImportAction
 
         $fields = collect($fields);
 
-        $fields = $fields->map(fn (ImportField|Field $field) => $this->getFields($field))->toArray();
+        $fields = $fields->map(fn (ImportField | Field $field) => $this->getFields($field))->toArray();
         $this->form(
             array_merge(
                 $this->form,
@@ -137,11 +139,12 @@ trait HasImportAction
         return $this;
     }
 
-    private function getFields(ImportField|Field $field): Field
+    private function getFields(ImportField | Field $field): Field
     {
         if ($field instanceof Field) {
             return $field;
         }
+
         return Select::make($field->getName())
             ->label($field->getLabel())
             ->helperText($field->getHelperText())

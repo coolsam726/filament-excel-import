@@ -1,4 +1,5 @@
 <?php
+
 return [
     'accepted_mimes' => [
         'application/vnd.ms-excel',
