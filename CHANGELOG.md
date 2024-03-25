@@ -2,6 +2,12 @@
 
 All notable changes to `excel` will be documented in this file.
 
+## v1.1.0 - 2024-03-25
+
+Laravel 11 Support
+
+**Full Changelog**: https://github.com/coolsam726/filament-excel-import/compare/v1.0.0...v1.1.0
+
 ## v1.0.0-beta.3 - 2023-08-14
 
 ### What's Changed
